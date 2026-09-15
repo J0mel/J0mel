@@ -25,7 +25,7 @@ $(document).ready(function() {
         posY = Math.cos(angle * Math.PI / 180) * 50 + 50; // Calculate flowing Y position
 
         $('body.bg-slate').css({
-            'background': `linear-gradient(${angle}deg, #1e3a8a, #3b82f6, #4f46e5, #06b6d4)`,
+            'background': `linear-gradient(${angle}deg, #0f172a, #807ad7, #adb8cf, #172554)`,
             'background-position': `${posX}% ${posY}%`,
             'background-size': '400% 400%'
         });
