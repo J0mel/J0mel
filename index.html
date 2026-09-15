@@ -3,58 +3,212 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>J0mel | Portfolio</title>
+    <title>J0mel | Developer Portfolio</title>
+    <!-- Browser Tab Icon (Favicon) -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22%2338bdf8%22><path d=%22M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z%22/></svg>">
+    <!-- Google Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --accent: #38bdf8;
+            --accent-gradient: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
+            --border-color: #334155;
+        }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            max-width: 800px;
-            margin: 60px auto;
-            padding: 0 20px;
-            color: #333;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
             line-height: 1.6;
         }
-        h1 { margin-bottom: 5px; color: #111; }
-        .tagline { color: #666; font-size: 1.2rem; margin-bottom: 30px; }
-        h2 { border-bottom: 1px solid #eaeaea; padding-bottom: 8px; margin-top: 40px; }
-        ul { padding-left: 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; list-style-type: square; }
-        li { margin-bottom: 5px; }
-        a { color: #0969da; text-decoration: none; }
-        a:hover { text-decoration: underline; }
-        .full-width { grid-column: span 2; }
+
+        header {
+            text-align: center;
+            background: var(--card-bg);
+            padding: 40px 20px;
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 30px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+        }
+
+        .avatar {
+            width: 80px;
+            height: 80px;
+            background: var(--accent-gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px auto;
+            font-size: 2rem;
+            color: #fff;
+            box-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
+        }
+
+        h1 {
+            margin: 0 0 10px 0;
+            font-size: 2.2rem;
+            letter-spacing: -0.5px;
+        }
+
+        .tagline {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            margin: 0;
+        }
+
+        section {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 25px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 0;
+            font-size: 1.4rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 12px;
+            color: var(--accent);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+            gap: 15px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .project-card {
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 15px;
+            transition: all 0.2s ease-in-out;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .project-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--accent);
+            box-shadow: 0 6px 15px rgba(56, 189, 248, 0.15);
+        }
+
+        .project-card a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95rem;
+            word-break: break-word;
+        }
+
+        .project-card a:hover {
+            color: var(--accent);
+        }
+
+        .project-card .material-icons {
+            color: var(--accent);
+            font-size: 1.2rem;
+        }
+
+        .contact-links {
+            display: flex;
+            gap: 15px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .contact-links a {
+            background: rgba(56, 189, 248, 0.1);
+            color: var(--accent);
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            transition: background 0.2s;
+        }
+
+        .contact-links a:hover {
+            background: rgba(56, 189, 248, 0.2);
+        }
+
+        @media (max-width: 600px) {
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
 
-    <h1>Hi, I'm J0mel 👋</h1>
-    <p class="tagline">Developer & Tech Enthusiast</p>
+    <header>
+        <div class="avatar">
+            <span class="material-icons" style="font-size: 40px; color: white;">code</span>
+        </div>
+        <h1>Hi, I'm J0mel 👋</h1>
+        <p class="tagline">Developer & Tech Enthusiast</p>
+    </header>
 
-    <h2>About Me</h2>
-    <p>Welcome to my portfolio! I build software, work with code, and love turning ideas into functional applications. Below is a collection of my systems, tools, and repositories.</p>
+    <section>
+        <h2><span class="material-icons">info</span> About Me</h2>
+        <p style="color: var(--text-secondary); margin-bottom: 0;">Welcome to my portfolio! I build software, design automated workflows, and love turning ideas into functional applications. Below is a complete collection of my systems, tools, and repositories.</p>
+    </section>
 
-    <h2>My Projects</h2>
-    <ul>
-        <li><a href="https://github.com/J0mel/NMIS_ADMIN" target="_blank">NMIS_ADMIN</a></li>
-        <li><a href="https://github.com/J0mel/Ciac-HRMIS" target="_blank">Ciac-HRMIS</a></li>
-        <li><a href="https://github.com/J0mel/NMIS---HRIS-x-MMIS" target="_blank">NMIS---HRIS-x-MMIS</a></li>
-        <li><a href="https://github.com/J0mel/OrderOfPayment" target="_blank">OrderOfPayment</a></li>
-        <li><a href="https://github.com/J0mel/CONex" target="_blank">CONex</a></li>
-        <li><a href="https://github.com/J0mel/NMIS_MDC" target="_blank">NMIS_MDC</a></li>
-        <li><a href="https://github.com/J0mel/STRADCOM_PORTAL" target="_blank">STRADCOM_PORTAL</a></li>
-        <li><a href="https://github.com/J0mel/NMIS-COMI" target="_blank">NMIS-COMI</a></li>
-        <li><a href="https://github.com/J0mel/DORS_SYSTEM" target="_blank">DORS_SYSTEM</a></li>
-        <li><a href="https://github.com/J0mel/NMIS-HRIS" target="_blank">NMIS-HRIS</a></li>
-        <li><a href="https://github.com/J0mel/Inserting" target="_blank">Inserting</a></li>
-        <li><a href="https://github.com/J0mel/DorsAutoAPi" target="_blank">DorsAutoAPi</a></li>
-        <li><a href="https://github.com/J0mel/BIR-APP" target="_blank">BIR-APP</a></li>
-        <li><a href="https://github.com/J0mel/BIR-SOFTWARE" target="_blank">BIR-SOFTWARE</a></li>
-        <li><a href="https://github.com/J0mel/BIR_filing" target="_blank">BIR_filing</a></li>
-        <li><a href="https://github.com/J0mel/QRPHV2" target="_blank">QRPHV2</a></li>
-        <li><a href="https://github.com/J0mel/CPortal" target="_blank">CPortal</a></li>
-        <li><a href="https://github.com/J0mel/Cebu-Update" target="_blank">Cebu-Update</a></li>
-    </ul>
+    <section>
+        <h2><span class="material-icons">folder_special</span> My Projects</h2>
+        <ul class="projects-grid">
+            <li class="project-card"><a href="https://github.com/J0mel/NMIS_ADMIN" target="_blank"><span class="material-icons">admin_panel_settings</span> NMIS_ADMIN</a></li>
+            <li class="project-card"><a href="https://github.com/J0mel/Ciac-HRMIS" target="_blank"><span class="material-icons">badge</span> Ciac-HRMIS</a></li>
+            <li class="project-card"><a href="https://github.com/J0mel/NMIS---HRIS-x-MMIS" target="_blank"><span class="material-icons">sync_alt</span> NMIS---HRIS-x-MMIS</a></li>
+            <li class="project-card"><a href="https://github.com/J0mel/OrderOfPayment" target="_blank"><span class="material-icons">receipt_long</span> OrderOfPayment</a></li>
+            <li class="project-card"><a href="https://github.com/J0mel/CONex" target="_blank"><span class="material-icons">hub</span> CONex</a></li>
+            <li class="project-card"><a href="https://github.com/J0mel/NMIS_MDC" target="_blank"><span class="material-icons">dns</span> NMIS_MDC</a></li>
+            <li class="project-card"><a href="https://github.com/J0mel/STRADCOM_PORTAL" target="_blank"><span class="material-icons">language</span> STRADCOM_PORTAL</a></li>
+            <li class="project-card"><a href="https://github.com/J0mel/NMIS-COMI" target="_blank"><span class="material-icons">group</span> NMIS-COMI</a></li>
+            <li class="project-card"><a href="https://github.com/J0mel/DORS_SYSTEM" target="_blank"><span class="material-icons">dns</span> DORS_SYSTEM</a></li>
+            <li class="project-card"><a href="https://github.com/J0mel/NMIS-HRIS" target="_blank"><span class="material-icons">person</span> NMIS-HRIS</a></li>
+            <li class="project-card"><a href="https://github.com/J0mel/Inserting" target="_blank"><span class="material-icons">input</span> Inserting</a></li>
+            <li class="project-card"><a href="https://github.com/J0mel/DorsAutoAPi" target="_blank"><span class="material-icons">api</span> DorsAutoAPi</a></li>
+            <li class="project-card"><a href="https://github.com/J0mel/BIR-APP" target="_blank"><span class="material-icons">receipt</span> BIR-APP</a></li>
+            <li class="project-card"><a href="https://github.com/J0mel/BIR-SOFTWARE" target="_blank"><span class="material-icons">terminal</span> BIR-SOFTWARE</a></li>
+            <li class="project-card"><a href="https://github.com/J0mel/BIR_filing" target="_blank"><span class="material-icons">folder</span> BIR_filing</a></li>
+            <li class="project-card"><a href="https://github.com/J0mel/QRPHV2" target="_blank"><span class="material-icons">qr_code</span> QRPHV2</a></li>
+            <li class="project-card"><a href="https://github.com/J0mel/CPortal" target="_blank"><span class="material-icons">web</span> CPortal</a></li>
+            <li class="project-card"><a href="https://github.com/J0mel/Cebu-Update" target="_blank"><span class="material-icons">update</span> Cebu-Update</a></li>
+        </ul>
+    </section>
 
-    <h2 class="full-width">Get in Touch</h2>
-    <p>Find more of my work on GitHub: <a href="https://github.com/J0mel" target="_blank">github.com/J0mel</a></p>
+    <section>
+        <h2><span class="material-icons">connect_without_contact</span> Get in Touch</h2>
+        <ul class="contact-links">
+            <li><a href="https://github.com/J0mel" target="_blank"><span class="material-icons">code</span> GitHub Profile</a></li>
+        </ul>
+    </section>
 
 </body>
 </html>
