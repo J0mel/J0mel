@@ -42,3 +42,34 @@ body.bg-slate {
     align-items: center;
     justify-content: center;
 }
+
+/* Modal Content Box */
+.modal-content.card-custom {
+    background: rgba(30, 41, 59, 0.85) !important;
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    border-radius: 12px;
+    color: #f8fafc;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* Modal Header & Footer Dividers */
+.modal-header, .modal-footer {
+    border-color: rgba(56, 189, 248, 0.15) !important;
+}
+
+/* Modal Title */
+.modal-title {
+    color: #38bdf8;
+    font-weight: 600;
+}
+
+/* Modal Body Text */
+.modal-body {
+    color: #cbd5e1;
+}
+
+/* Close Button (if using Bootstrap default close) */
+.modal-header .btn-close {
+    filter: invert(1) grayscale(100%) brightness(200%);
+}
