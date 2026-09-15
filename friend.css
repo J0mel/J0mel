@@ -1,0 +1,54 @@
+:root {
+    --bg-color: #0f172a;
+    --card-bg: #1e293b;
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --accent: #38bdf8;
+    --border-color: #334155;
+}
+
+body.bg-slate {
+    background-color: var(--bg-color) !important;
+    color: var(--text-primary);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.card-custom {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+}
+
+.avatar {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.text-accent {
+    color: var(--accent) !important;
+}
+
+.project-card {
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid var(--border-color);
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.project-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--accent);
+    box-shadow: 0 6px 15px rgba(56, 189, 248, 0.15);
+    background: rgba(30, 41, 59, 0.9);
+}
+
+.modal-content.bg-slate {
+    background-color: var(--card-bg) !important;
+    border: 1px solid var(--accent);
+}
