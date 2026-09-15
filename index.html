@@ -11,14 +11,14 @@
     <!-- Google Material Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="friend.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-slate py-5">
 
-    <div class="container">
+    <div class="container animate-fade-in">
         <!-- Header -->
-        <header class="text-center p-5 mb-4 card-custom">
-            <div class="avatar mb-3 mx-auto shadow-sm">
+        <header class="text-center p-5 mb-4 card-custom animate-slide-down">
+            <div class="avatar mb-3 mx-auto shadow-sm pulse-animation">
                 <span class="material-icons text-white" style="font-size: 40px;">code</span>
             </div>
             <h1 class="fw-bold text-light">Hi, I'm J0mel 👋</h1>
@@ -39,7 +39,6 @@
                 <span class="material-icons">folder_special</span> My Projects
             </h2>
             <div class="row g-3" id="project-list">
-                <!-- Project cards will be dynamically interactive or structured here -->
                 <div class="col-sm-6 col-md-4 col-lg-3">
                     <div class="project-card h-100 p-3 rounded d-flex align-items-center gap-2" data-title="NMIS_ADMIN" data-desc="Centralized system administration tool designed for managing system configurations and reviewing/approving user applications across NMIS-HRIS-x-MMIS, NMIS_MDC, NMIS-COMI, and NMIS-MCP." data-repo="https://github.com/J0mel/NMIS_ADMIN" data-icon="admin_panel_settings">
                         <span class="material-icons text-accent">admin_panel_settings</span>
@@ -189,6 +188,6 @@
     <!-- Bootstrap 5 JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Custom JS -->
-    <script src="friend.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
