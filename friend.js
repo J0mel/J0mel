@@ -14,7 +14,7 @@ $(document).ready(function() {
         projectModal.show();
     });
 
-    // 2. JavaScript Continuous Moving Gradient Animation
+    // 2. JavaScript Continuous Moving Bright Gradient Animation
     let angle = 0;
     let posX = 0;
     let posY = 0;
@@ -25,7 +25,7 @@ $(document).ready(function() {
         posY = Math.cos(angle * Math.PI / 180) * 50 + 50; // Calculate flowing Y position
 
         $('body.bg-slate').css({
-            'background': `linear-gradient(${angle}deg, #0f172a, #1e1b4b, #0f172a, #172554)`,
+            'background': `linear-gradient(${angle}deg, #1e3a8a, #3b82f6, #4f46e5, #06b6d4)`,
             'background-position': `${posX}% ${posY}%`,
             'background-size': '400% 400%'
         });
