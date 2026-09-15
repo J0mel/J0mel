@@ -171,25 +171,27 @@
     </div>
 
     <!-- Bootstrap Modal for Project Details -->
-    <div class="modal fade" id="projectModal" tabindex="-1" aria-hidden="true">
+    <div class="modal fade" id="repositoryModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content bg-slate border-accent text-light">
-                <div class="modal-header border-secondary">
-                    <h5 class="modal-title text-accent d-flex align-items-center gap-2" id="modalTitle">Title</h5>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            <!-- Add .card-custom here -->
+            <div class="modal-content card-custom">
+                <div class="modal-header">
+                    <h5 class="modal-title">
+                        <i class="bi bi-arrow-left-right text-accent me-2"></i> NMIS---HRIS-x-MMIS
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <p class="text-secondary" id="modalDesc">Description goes here...</p>
+                    <p>Enterprise logistics and monitoring module tracking animal slaughter checks, inventory levels, ordering processes, and meat delivery lifecycles.</p>
                 </div>
-                <div class="modal-footer border-secondary">
-                    <a id="modalRepoBtn" href="#" target="_blank" class="btn btn-info fw-semibold d-inline-flex align-items-center gap-2">
-                        <span class="material-icons" style="font-size: 1.1rem;">open_in_new</span> View Repository
+                <div class="modal-footer border-0">
+                    <a href="#" class="btn btn-info text-dark fw-semibold px-4" style="background-color: #38bdf8; border: none;">
+                        <i class="bi bi-box-arrow-up-right me-1"></i> View Repository
                     </a>
                 </div>
             </div>
         </div>
     </div>
-
     <!-- jQuery CDN -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <!-- Bootstrap 5 JS Bundle -->
