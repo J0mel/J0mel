@@ -24,7 +24,7 @@ $(document).ready(function() {
 
     // Fallback if computedStyle doesn't catch it immediately
     if (!baseLinearGradient || baseLinearGradient === 'none') {
-        baseLinearGradient = 'linear-gradient(135deg, #1e3a8a, #3b82f6, #4f46e5, #06b6d4)';
+        baseLinearGradient = 'linear-gradient(135deg,  #354c8c, #243959, #28283c, #1b3c41)';
     }
 
     // Strip out any old angle declarations so we can dynamically inject our moving angle loop
