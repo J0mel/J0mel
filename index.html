@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>J0mel | Developer Portfolio</title>
-    <!-- Browser Tab Icon (Favicon) -->
+    <!-- Browser Tab Icon -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22%2338bdf8%22><path d=%22M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z%22/></svg>">
     <!-- Google Material Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -48,7 +48,6 @@
             align-items: center;
             justify-content: center;
             margin: 0 auto 15px auto;
-            font-size: 2rem;
             color: #fff;
             box-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
         }
@@ -87,7 +86,7 @@
 
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
             gap: 15px;
             list-style: none;
             padding: 0;
@@ -98,37 +97,125 @@
             background: rgba(15, 23, 42, 0.6);
             border: 1px solid var(--border-color);
             border-radius: 10px;
-            padding: 15px;
+            padding: 18px;
             transition: all 0.2s ease-in-out;
+            cursor: pointer;
             display: flex;
-            flex-direction: column;
-            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
         }
 
         .project-card:hover {
             transform: translateY(-3px);
             border-color: var(--accent);
             box-shadow: 0 6px 15px rgba(56, 189, 248, 0.15);
-        }
-
-        .project-card a {
-            color: var(--text-primary);
-            text-decoration: none;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 0.95rem;
-            word-break: break-word;
-        }
-
-        .project-card a:hover {
-            color: var(--accent);
+            background: rgba(30, 41, 59, 0.9);
         }
 
         .project-card .material-icons {
             color: var(--accent);
-            font-size: 1.2rem;
+            font-size: 1.5rem;
+        }
+
+        .project-card span.title {
+            color: var(--text-primary);
+            font-weight: 600;
+            font-size: 0.95rem;
+            word-break: break-word;
+        }
+
+        /* Modal Popup Styles */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(5px);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .modal-card {
+            background: #1e293b;
+            border: 1px solid var(--accent);
+            border-radius: 16px;
+            padding: 30px;
+            max-width: 500px;
+            width: 100%;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+            animation: modalPop 0.25s ease-out;
+            position: relative;
+        }
+
+        @keyframes modalPop {
+            from { transform: scale(0.95); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        .modal-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 12px;
+            margin-bottom: 15px;
+        }
+
+        .modal-header h3 {
+            margin: 0;
+            color: var(--accent);
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .close-btn:hover {
+            color: var(--text-primary);
+        }
+
+        .modal-body p {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            margin-bottom: 25px;
+            line-height: 1.7;
+        }
+
+        .modal-footer {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+        }
+
+        .btn-repo {
+            background: var(--accent-gradient);
+            color: #0f172a;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: opacity 0.2s;
+        }
+
+        .btn-repo:hover {
+            opacity: 0.9;
         }
 
         .contact-links {
@@ -176,30 +263,84 @@
 
     <section>
         <h2><span class="material-icons">info</span> About Me</h2>
-        <p style="color: var(--text-secondary); margin-bottom: 0;">Welcome to my portfolio! I build software, design automated workflows, and love turning ideas into functional applications. Below is a complete collection of my systems, tools, and repositories.</p>
+        <p style="color: var(--text-secondary); margin-bottom: 0;">Welcome to my portfolio! I build systems, enterprise tracking software, automated workflows, and APIs. Click any project card below to view its details and repository link.</p>
     </section>
 
     <section>
         <h2><span class="material-icons">folder_special</span> My Projects</h2>
         <ul class="projects-grid">
-            <li class="project-card"><a href="https://github.com/J0mel/NMIS_ADMIN" target="_blank"><span class="material-icons">admin_panel_settings</span> NMIS_ADMIN</a></li>
-            <li class="project-card"><a href="https://github.com/J0mel/Ciac-HRMIS" target="_blank"><span class="material-icons">badge</span> Ciac-HRMIS</a></li>
-            <li class="project-card"><a href="https://github.com/J0mel/NMIS---HRIS-x-MMIS" target="_blank"><span class="material-icons">sync_alt</span> NMIS---HRIS-x-MMIS</a></li>
-            <li class="project-card"><a href="https://github.com/J0mel/OrderOfPayment" target="_blank"><span class="material-icons">receipt_long</span> OrderOfPayment</a></li>
-            <li class="project-card"><a href="https://github.com/J0mel/CONex" target="_blank"><span class="material-icons">hub</span> CONex</a></li>
-            <li class="project-card"><a href="https://github.com/J0mel/NMIS_MDC" target="_blank"><span class="material-icons">dns</span> NMIS_MDC</a></li>
-            <li class="project-card"><a href="https://github.com/J0mel/STRADCOM_PORTAL" target="_blank"><span class="material-icons">language</span> STRADCOM_PORTAL</a></li>
-            <li class="project-card"><a href="https://github.com/J0mel/NMIS-COMI" target="_blank"><span class="material-icons">group</span> NMIS-COMI</a></li>
-            <li class="project-card"><a href="https://github.com/J0mel/DORS_SYSTEM" target="_blank"><span class="material-icons">dns</span> DORS_SYSTEM</a></li>
-            <li class="project-card"><a href="https://github.com/J0mel/NMIS-HRIS" target="_blank"><span class="material-icons">person</span> NMIS-HRIS</a></li>
-            <li class="project-card"><a href="https://github.com/J0mel/Inserting" target="_blank"><span class="material-icons">input</span> Inserting</a></li>
-            <li class="project-card"><a href="https://github.com/J0mel/DorsAutoAPi" target="_blank"><span class="material-icons">api</span> DorsAutoAPi</a></li>
-            <li class="project-card"><a href="https://github.com/J0mel/BIR-APP" target="_blank"><span class="material-icons">receipt</span> BIR-APP</a></li>
-            <li class="project-card"><a href="https://github.com/J0mel/BIR-SOFTWARE" target="_blank"><span class="material-icons">terminal</span> BIR-SOFTWARE</a></li>
-            <li class="project-card"><a href="https://github.com/J0mel/BIR_filing" target="_blank"><span class="material-icons">folder</span> BIR_filing</a></li>
-            <li class="project-card"><a href="https://github.com/J0mel/QRPHV2" target="_blank"><span class="material-icons">qr_code</span> QRPHV2</a></li>
-            <li class="project-card"><a href="https://github.com/J0mel/CPortal" target="_blank"><span class="material-icons">web</span> CPortal</a></li>
-            <li class="project-card"><a href="https://github.com/J0mel/Cebu-Update" target="_blank"><span class="material-icons">update</span> Cebu-Update</a></li>
+            <li class="project-card" onclick="openModal('NMIS_ADMIN', 'Centralized system administration tool designed for managing system configurations and reviewing/approving user applications across NMIS-HRIS-x-MMIS, NMIS_MDC, NMIS-COMI, and NMIS-MCP.', 'https://github.com/J0mel/NMIS_ADMIN', 'admin_panel_settings')">
+                <span class="material-icons">admin_panel_settings</span>
+                <span class="title">NMIS_ADMIN</span>
+            </li>
+            <li class="project-card" onclick="openModal('Ciac-HRMIS', 'Comprehensive Human Resource Management Information System handling employee login, management records, memo issuances, leave request approvals, time-in location tracking, and employee profile images.', 'https://github.com/J0mel/Ciac-HRMIS', 'badge')">
+                <span class="material-icons">badge</span>
+                <span class="title">Ciac-HRMIS</span>
+            </li>
+            <li class="project-card" onclick="openModal('NMIS---HRIS-x-MMIS', 'Enterprise logistics and monitoring module tracking animal slaughter checks, inventory levels, ordering processes, and meat delivery lifecycles.', 'https://github.com/J0mel/NMIS---HRIS-x-MMIS', 'sync_alt')">
+                <span class="material-icons">sync_alt</span>
+                <span class="title">NMIS---HRIS-x-MMIS</span>
+            </li>
+            <li class="project-card" onclick="openModal('OrderOfPayment', 'Integrated order processing backend API bundled with a dedicated front-end web client for seamlessly requesting payment orders via QRPH.', 'https://github.com/J0mel/OrderOfPayment', 'receipt_long')">
+                <span class="material-icons">receipt_long</span>
+                <span class="title">OrderOfPayment</span>
+            </li>
+            <li class="project-card" onclick="openModal('CONex', 'User account management portal supporting secure registration, reserve examination applications, and personalized user profile configuration settings.', 'https://github.com/J0mel/CONex', 'hub')">
+                <span class="material-icons">hub</span>
+                <span class="title">CONex</span>
+            </li>
+            <li class="project-card" onclick="openModal('NMIS_MDC', 'Specialized operations module managing ordering verification, stock inventory, and localized meat distribution workflows inside the Meat Distribution Center.', 'https://github.com/J0mel/NMIS_MDC', 'dns')">
+                <span class="material-icons">dns</span>
+                <span class="title">NMIS_MDC</span>
+            </li>
+            <li class="project-card" onclick="openModal('STRADCOM_PORTAL', 'Administrative enterprise portal built for managing, generating, and carefully processing transaction cancellations.', 'https://github.com/J0mel/STRADCOM_PORTAL', 'language')">
+                <span class="material-icons">language</span>
+                <span class="title">STRADCOM_PORTAL</span>
+            </li>
+            <li class="project-card" onclick="openModal('NMIS-COMI', 'Imported meat logistics tracking tool overseeing import ordering protocols, verification checks, warehouse inventory, and secure delivery logs.', 'https://github.com/J0mel/NMIS-COMI', 'group')">
+                <span class="material-icons">group</span>
+                <span class="title">NMIS-COMI</span>
+            </li>
+            <li class="project-card" onclick="openModal('DORS_SYSTEM', 'Core enterprise system engineered for high-volume transaction management, record generation, and precise transaction cancellation handling.', 'https://github.com/J0mel/DORS_SYSTEM', 'dns')">
+                <span class="material-icons">dns</span>
+                <span class="title">DORS_SYSTEM</span>
+            </li>
+            <li class="project-card" onclick="openModal('NMIS-HRIS', 'Human Resource Information System built for employee record keeping, digital memo issuance, leave workflow processing, and location-based time tracking.', 'https://github.com/J0mel/NMIS-HRIS', 'person')">
+                <span class="material-icons">person</span>
+                <span class="title">NMIS-HRIS</span>
+            </li>
+            <li class="project-card" onclick="openModal('Inserting', 'Test and simulation utility built as a dummy data-insertion processor designed to support testing workflows for DORS_SYSTEM transactions.', 'https://github.com/J0mel/Inserting', 'input')">
+                <span class="material-icons">input</span>
+                <span class="title">Inserting</span>
+            </li>
+            <li class="project-card" onclick="openModal('DorsAutoAPi', 'Automated background API engine responsible for precise serial number allocation to auto-populate fields across DORS_SYSTEM workflows.', 'https://github.com/J0mel/DorsAutoAPi', 'api')">
+                <span class="material-icons">api</span>
+                <span class="title">DorsAutoAPi</span>
+            </li>
+            <li class="project-card" onclick="openModal('BIR-APP', 'Mobile application tailored for BIR collection officers to facilitate secure real-time digital and cash payment processing out in the field.', 'https://github.com/J0mel/BIR-APP', 'receipt')">
+                <span class="material-icons">receipt</span>
+                <span class="title">BIR-APP</span>
+            </li>
+            <li class="project-card" onclick="openModal('BIR-SOFTWARE', 'Desktop and system utility suite enabling BIR collection officers to manage online gateway collections and cash transaction reconciliations.', 'https://github.com/J0mel/BIR-SOFTWARE', 'terminal')">
+                <span class="material-icons">terminal</span>
+                <span class="title">BIR-SOFTWARE</span>
+            </li>
+            <li class="project-card" onclick="openModal('BIR_filing', 'Web-based management system structured for filing, organizing, and tracking targeted customer collection lists and respective financial balances.', 'https://github.com/J0mel/BIR_filing', 'folder')">
+                <span class="material-icons">folder</span>
+                <span class="title">BIR_filing</span>
+            </li>
+            <li class="project-card" onclick="openModal('QRPHV2', 'High-performance API service configured for generating dynamic QRPH payment request codes instantly on demand.', 'https://github.com/J0mel/QRPHV2', 'qr_code')">
+                <span class="material-icons">qr_code</span>
+                <span class="title">QRPHV2</span>
+            </li>
+            <li class="project-card" onclick="openModal('CPortal', 'Captive portal web application engineered to generate dynamic network access tickets for seamless Wi-Fi connectivity authorization.', 'https://github.com/J0mel/CPortal', 'web')">
+                <span class="material-icons">web</span>
+                <span class="title">CPortal</span>
+            </li>
+            <li class="project-card" onclick="openModal('Cebu-Update', 'Database utility software designed to execute batch SQL scripts and schema updates safely across local and online server environments.', 'https://github.com/J0mel/Cebu-Update', 'update')">
+                <span class="material-icons">update</span>
+                <span class="title">Cebu-Update</span>
+            </li>
         </ul>
     </section>
 
@@ -210,5 +351,39 @@
         </ul>
     </section>
 
+    <!-- Project Detail Modal -->
+    <div class="modal-overlay" id="projectModal" onclick="outsideClose(event)">
+        <div class="modal-card">
+            <div class="modal-header">
+                <h3 id="modalTitle"><span class="material-icons" id="modalIcon">folder</span> Title</h3>
+                <button class="close-btn" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p id="modalDesc">Description goes here...</p>
+            </div>
+            <div class="modal-footer">
+                <a id="modalRepoBtn" href="#" target="_blank" class="btn-repo"><span class="material-icons" style="font-size: 1.1rem;">open_in_new</span> View Repository</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openModal(title, desc, repoUrl, iconName) {
+            document.getElementById('modalTitle').innerHTML = `<span class="material-icons">${iconName}</span> ${title}`;
+            document.getElementById('modalDesc').innerText = desc;
+            document.getElementById('modalRepoBtn').href = repoUrl;
+            document.getElementById('projectModal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('projectModal').style.display = 'none';
+        }
+
+        function outsideClose(event) {
+            if (event.target.id === 'projectModal') {
+                closeModal();
+            }
+        }
+    </script>
 </body>
 </html>
