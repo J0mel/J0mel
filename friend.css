@@ -1,5 +1,4 @@
 :root {
-    --bg-color: #0f172a;
     --card-bg: #1e293b;
     --text-primary: #f8fafc;
     --text-secondary: #94a3b8;
@@ -7,14 +6,25 @@
     --border-color: #334155;
 }
 
+/* Animated Background */
 body.bg-slate {
-    background-color: var(--bg-color) !important;
+    background: linear-gradient(-45deg, #0f172a, #1e293b, #0f172a, #1e1b4b);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
     color: var(--text-primary);
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    min-height: 100vh;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 .card-custom {
-    background-color: var(--card-bg);
+    background-color: rgba(30, 41, 59, 0.85);
+    backdrop-filter: blur(10px);
     border: 1px solid var(--border-color);
     border-radius: 16px;
     box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
@@ -22,7 +32,7 @@ body.bg-slate {
 }
 
 .card-custom:hover {
-    box-shadow: 0 15px 35px -5px rgba(56, 189, 248, 0.1);
+    box-shadow: 0 15px 35px -5px rgba(56, 189, 248, 0.15);
 }
 
 .avatar {
@@ -51,7 +61,7 @@ body.bg-slate {
     transform: translateY(-5px) scale(1.02);
     border-color: var(--accent);
     box-shadow: 0 10px 20px rgba(56, 189, 248, 0.2);
-    background: rgba(30, 41, 59, 0.9);
+    background: rgba(30, 41, 59, 0.95);
 }
 
 .modal-content.bg-slate {
