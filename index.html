@@ -43,9 +43,12 @@
             <h2 class="h4 text-accent border-bottom pb-2 mb-3 d-flex align-items-center gap-2">
                 <span class="material-icons">folder_special</span> My Projects
             </h2>
-            <div class="row g-3" id="project-list">
-                
-                <!-- Government Category / NMIS & Systems -->
+
+            <!-- GROUP 1: Government -->
+            <h3 class="h5 text-light fw-bold mt-4 mb-3 d-flex align-items-center gap-2">
+                <span class="material-icons text-accent" style="font-size: 20px;">account_balance</span> Government
+            </h3>
+            <div class="row g-3 mb-4" id="project-list-gov">
                 <div class="col-sm-6 col-md-4 col-lg-3">
                     <div class="project-card h-100 p-3 rounded d-flex align-items-center gap-2" data-title="NMIS-ADMIN" data-desc="Centralized system administration tool designed for managing system configurations and reviewing/approving user applications across NMIS-HRIS-x-MMIS, NMIS_MDC, NMIS-COMI, and NMIS-MCP." data-repo="https://github.com/J0mel/NMIS_ADMIN" data-icon="admin_panel_settings">
                         <span class="material-icons text-accent">admin_panel_settings</span>
@@ -124,8 +127,13 @@
                         <span class="title text-light fw-semibold">STRADCOM-API</span>
                     </div>
                 </div>
+            </div>
 
-                <!-- Private Company Category -->
+            <!-- GROUP 2: Private Company -->
+            <h3 class="h5 text-light fw-bold mt-5 mb-3 d-flex align-items-center gap-2">
+                <span class="material-icons text-accent" style="font-size: 20px;">business</span> Private Company
+            </h3>
+            <div class="row g-3 mb-4" id="project-list-private">
                 <div class="col-sm-6 col-md-4 col-lg-3">
                     <div class="project-card h-100 p-3 rounded d-flex align-items-center gap-2" data-title="CIAC-HRMIS" data-desc="Comprehensive Human Resource Management Information System handling employee login, management records, memo issuances, leave request approvals, time-in location tracking, and employee profile images." data-repo="https://github.com/J0mel/Ciac-HRMIS" data-icon="badge">
                         <span class="material-icons text-accent">badge</span>
@@ -144,8 +152,13 @@
                         <span class="title text-light fw-semibold">Parking System</span>
                     </div>
                 </div>
+            </div>
 
-                <!-- Flexible / Both Private & Government Category -->
+            <!-- GROUP 3: Both Private or Government Companies -->
+            <h3 class="h5 text-light fw-bold mt-5 mb-3 d-flex align-items-center gap-2">
+                <span class="material-icons text-accent" style="font-size: 20px;">all_inclusive</span> Can use on both Private or Government Companies
+            </h3>
+            <div class="row g-3" id="project-list-both">
                 <div class="col-sm-6 col-md-4 col-lg-3">
                     <div class="project-card h-100 p-3 rounded d-flex align-items-center gap-2" data-title="DORS-SYSTEM" data-desc="Core enterprise system engineered for high-volume transaction management, record generation, and precise transaction cancellation handling." data-repo="https://github.com/J0mel/DORS_SYSTEM" data-icon="dns">
                         <span class="material-icons text-accent">dns</span>
@@ -170,8 +183,8 @@
                         <span class="title text-light fw-semibold">OrderOfPayment</span>
                     </div>
                 </div>
-
             </div>
+
         </section>
 
         <!-- Contact Section -->
